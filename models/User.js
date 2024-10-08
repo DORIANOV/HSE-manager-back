@@ -2,9 +2,7 @@
 const { DataTypes } = require('sequelize');
 const { sequelize } = require('../config/database');
 
-// Définir le modèle "User"
 const User = sequelize.define('User', {
-    // Définition des champs
     name: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -18,9 +16,10 @@ const User = sequelize.define('User', {
         type: DataTypes.STRING,
         allowNull: false,
     },
+    role: {
+        type: DataTypes.STRING, // "admin" ou "user"
+        defaultValue: "user",
+    }
 });
-
-// Synchroniser avec la base de données (cela créera la table si elle n'existe pas)
-User.sync();
 
 module.exports = User;

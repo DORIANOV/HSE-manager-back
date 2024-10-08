@@ -1,10 +1,10 @@
-// models/Equipment.js
+// models/Trousse.js
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 const Entreprise = require('./Entreprise');
 
-const Equipment = sequelize.define('Equipment', {
-    equipement_id: {
+const Trousse = sequelize.define('Trousse', {
+    trousse_id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
@@ -20,17 +20,6 @@ const Equipment = sequelize.define('Equipment', {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    modele: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    date_installation: {
-        type: DataTypes.DATE,
-        allowNull: false,
-    },
-    date_derniere_verif: {
-        type: DataTypes.DATE,
-    },
 });
 
-module.exports = Equipment;
+module.exports = Trousse;
